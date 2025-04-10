@@ -2,15 +2,21 @@
   "name": "express-hello-world",
   "version": "1.0.0",
   "description": "Express Hello World on Render",
-  "main": "app.js",
+  "main": "index.js",
   "repository": "https://github.com/render-examples/express-hello-world",
   "author": "Render Developers",
   "license": "MIT",
+  "type": "module",
   "private": false,
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^5.0.0"
+    "@emailjs/browser": "^4.4.1",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "pg": "^8.14.1"
   }
 }
