@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+    <%- include('partials/navbar') %>
+        <main>
+            <section>
+                <article class="fiche--article">
+                    <img src="/images/coffees/<%= oneCafe.id %>.png" alt="<%= oneCafe.nom%>" class="fiche--article__image">
+                    <p class="fiche--article__date">Publié le <time datetime="2025-04-08">8 avril 2025</time></p>
+                    <h2>Nom : <%= oneCafe.nom%></h2>
+                    <p>Origine : <%= oneCafe.origine%></p>
+                    <p><%= oneCafe.describe%></p>
+                    <p>Caractéristique principale : <%= oneCafe.caracteristiques%></p>
+                    <p><%= oneCafe.prix%> €/kg</p>
+                    <p>Disponible : <%= oneCafe.disponible%></p>
+                    <p>Référence : <%= oneCafe.ref%></p>
+                    <button class="fiche--article__button basic-button"><a href="/catalogue">Catalogue</a></button>
+                </article>
+            </section>
+        </main>
+        <%- include('partials/footer') %>

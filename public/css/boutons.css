@@ -1,0 +1,27 @@
+
+
+html{
+  --color-title : #cc5500; /* Burnt orange*/
+  --color-text : black;
+  --color-bg : 	#c7b8a7;/*light gray*/
+  --color-button : #d4c9bb;
+  --default-spacing : 1rem,
+  }
+.basic-button {
+    padding: 0.5rem 2rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-title);
+    background-color: var(--color-button);
+    transition-duration: 0.4s;
+  }
+  
+  .basic-button:hover {
+    background-color: var(--color-title);
+    color: var(--color-bg);
+  }
+
+  button:hover a {
+   color: var(--color-button);
+   /* text-shadow: 1px 1px 1px var(--color-button)*/
+  }

@@ -1,0 +1,5 @@
+PORT=3001
+PGUSER=julien
+PGPASSWORD=Faitchier
+PGDATABASE=ocoffee
+secret = "mdp"

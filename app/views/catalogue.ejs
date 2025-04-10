@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+    <%- include('partials/navbar') %>
+        <main>
+            <div class="catalogue">
+                <h2 class="catalogue--titre">Notre catalogue</h2>
+            </div>
+            <div class="category--button">
+                <button class="category--button__button basic-button">Catégories</button>
+            </div>
+            <section class="category">
+                <% allCafe.forEach(element => { %>            
+                <article class="category--article">
+                    <img src="/images/coffees/<%= element.id %>.png" alt="<%= element.nom %>" class="category--article__image">
+                        <h2><%= element.nom %></h2>
+                        <p><%= element.origine %></p>
+                        <p><%= element.prix %> €/kg</p>
+                        <button class="category--article__button basic-button"><a href="/detail/<%= element.id %>">Découvrir</a></button>
+                </article>
+                <% }) %>
+            </section>
+            <div class="detail--button">
+                <button id="buttonSeeAll" class="detail--button__button basic-button ">Voir tous les produits</button>
+            </div>
+        </main>
+ <!-- Common scripts -->
+ <script defer src="/js/header.js"></script>
+        <%- include('partials/footer') %>

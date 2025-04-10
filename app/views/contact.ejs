@@ -1,0 +1,31 @@
+<%- include('partials/header-emailjs') %>
+    <%- include('partials/navbar') %>
+        <main id="form">
+            <h2 class >Contact form</h2>
+            <form action="" method="post" class="form" id="contact-form">
+                <fieldset class="form--fieldset">
+                    <legend class="form--fieldset__legend"><h3>Dites-nous tout !</h3></legend>
+                    <div class="form--input">
+                        <label for="surname"> Votre prénom </label>
+                        <input type="text" name="surname" id="surname" required placeholder=" Jaime" />
+                    </div>
+                    <div class="form--input">
+                        <label for="name"> Votre nom </label>
+                        <input type="text" name="name" id="name" required placeholder=" Le Café"/>
+                    </div>
+
+                    <div class="form--input">
+                        <label for="email"> Votre email </label>
+                        <input type="email" name="email" id="email" required placeholder=" Votre email"/>
+                    </div>
+                    <div class="form--input">
+                        <label for="message"> Votre message </label>
+                        <textarea  id="message" name="message" rows="5" cols="33" placeholder=" J'aime le café..." ></textarea>
+                    </div>
+                    <div>
+                    <input type="submit" value="Envoyer" class="form--button basic-button"/>
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+        <%- include('partials/footer') %>

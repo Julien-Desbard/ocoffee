@@ -1,0 +1,105 @@
+<%- include('partials/header') %>
+    <%- include('partials/navbar') %>
+        <main id="form">
+            <h2 class>Back-Office Ocoffee</h2>
+            <!-- ================== Ajout d'un café ==========================-->
+            <div>
+                <form action="/addCafe" method="post" class="form">
+                    <fieldset class="form--fieldset">
+                        <legend class="form--fieldset__legend">
+                            <h3>Ajouter un café</h3>
+                        </legend>
+                        <div class="form--input">
+                            <label for="nom"> Nom du café </label>
+                            <input type="text" name="nom" id="nom" required />
+                        </div>
+                        <div class="form--input">
+                            <label for="describe">Description du café</label>
+                            <textarea id="describe" name="describe" rows="3" cols="21" required></textarea>
+                        </div>
+                        <div class="form--input">
+                            <label for="ref">Référence</label>
+                            <input type="number" name="ref" id="ref" required placeholder="ex : 245811809" />
+                        </div>
+                        <div class="form--input">
+                            <label for="origine">Origine</label>
+                            <input type="text" name="origine" id="origine" required />
+                        </div>
+                        <div class="form--input">
+                            <label for="prix">Prix</label>
+                            <input type="number" name="prix" id="prix" required placeholder="ex : 25.34" />
+                        </div>
+                        <div class="form--input">
+                            <label for="caracteristiques">Caractéristiques</label>
+                            <input type="text" name="caracteristiques" id="caracteristiques" required />
+                        </div>
+                        <div class="form--input">
+                            <label for="disponible">Disponible</label>
+                            <input type="text" name="disponible" id="disponible" required placeholder="Oui ou non" />
+                        </div>
+                        <div>
+                            <input type="submit" value="Créer le café" class="form--button basic-button" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- ================== Modification d'un café ==========================-->
+            <div>
+                <form action="/modifyCafe" method="post" class="form">
+                    <fieldset class="form--fieldset">
+                        <legend class="form--fieldset__legend">
+                            <h3>Modifier un café</h3>
+                        </legend>
+                        <div class="form--input">
+                            <label for="nomCafe">Quel café voulez-vous modifier ?</label>
+                            <select name="nomCafe" id="nomCafe">
+                                <% filtreCafe.forEach((cafe) => { %>                                 
+                                <option value="<%= cafe.nom %>"><%= cafe.nom %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="form--input">
+                            <label for="modifyItem">Quel info voulez-vous modifier ?</label>
+                            <select name="modifyItem" id="modifyItem">
+                                <% allCafe.forEach((cafe) => { %>                                 
+                                <option value="<%= cafe.column_name %>"><%= cafe.column_name %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <!--todo idée pour modifier un café ==> 
+                        - demander de saisir la nouvelle valeur
+                        - envoyer cette valeur dans le post pour gérer la modification de la bdd-->
+                       <div class="form--input">
+                            <label for="insertion">Saisissez la nouvelle valeur</label>
+                            <textarea id="insertion" name="insertion" rows="3" cols="21" >test</textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Modifier le café" class="form--button basic-button" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- ================== Suppression d'un café ==========================-->
+            <div>
+                <form action="/deleteCafe" method="post" class="form">
+                    <fieldset class="form--fieldset">
+                        <legend class="form--fieldset__legend">
+                            <h3>Supprimer un café</h3>
+                        </legend>
+                        <div class="form--input">
+                            <label for="deleteCafe">Selectionnez un café</label>
+                            <select name="deleteCafe" id="deleteCafe">
+                                <% filtreCafe.forEach((cafe) => { %>                                 
+                                <option value="<%= cafe.nom %>"><%= cafe.nom %></option>
+                                <% }) %>
+                            </select>
+                            <div>
+                                <input type="submit" value="Supprimer le café" class="form--button basic-button" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+        </main>
+        <%- include('partials/footer') %>
