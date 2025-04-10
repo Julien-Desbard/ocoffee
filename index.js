@@ -32,7 +32,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: { 
 
-    secure: false,  // ! TOUJOURS METTRE TRUE EN PROD (pour le https)
+    secure: true,  // ! TOUJOURS METTRE TRUE EN PROD (pour le https)
     httpOnly: true, // bloque l'usage du cookie coté front, (protection contre le vol de cookie par xss ...)
     maxAge: 60*60*1000 // ici, permet de définir l'age du cookie coté client, au bout d'1h il expire
 
